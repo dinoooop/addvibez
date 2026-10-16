@@ -1,0 +1,161 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Pill button with an inset arrow chip: <a class="btn btn-vibe btn-vibe--primary">
+.btn-vibe {
+    --btn-bg: #{$purple};
+    --btn-color: #{$white};
+    --btn-chip-bg: #{$white};
+    --btn-chip-color: #{$purple};
+    --btn-hover-bg: #{$magenta-dark};
+    --btn-border: transparent;
+
+    display: inline-flex;
+    align-items: center;
+    gap: space(4);
+    padding: space(1) space(1) space(1) space(5);
+    font-family: $font-heading;
+    font-weight: $fw-semibold;
+    font-size: 0.9375rem;
+    line-height: 1.2;
+    color: var(--btn-color);
+    background: var(--btn-bg);
+    border: 2px solid var(--btn-border);
+    border-radius: $radius-md;
+    transition:
+        background $transition,
+        color $transition,
+        transform $transition,
+        box-shadow $transition,
+        border-color $transition;
+
+    &__chip {
+        display: inline-grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        font-size: 1rem;
+        color: var(--btn-chip-color);
+        background: var(--btn-chip-bg);
+        border-radius: calc(#{$radius-md} - 6px);
+        transition:
+            transform $transition,
+            background $transition,
+            color $transition;
+
+        @include icon-selectors {
+            width: 1em;
+            height: 1em;
+        }
+    }
+
+    &:hover,
+    &:focus-visible {
+        color: var(--btn-color);
+        background: var(--btn-hover-bg);
+        transform: translateY(-3px);
+        box-shadow: $shadow-md;
+
+        .btn-vibe__chip {
+            transform: translateX(3px) rotate(-45deg);
+        }
+    }
+
+    &:active {
+        transform: translateY(0);
+        color: var(--btn-color);
+        background: var(--btn-hover-bg);
+        border-color: var(--btn-border);
+    }
+
+    &--primary {
+        --btn-bg: #{$yellow};
+        --btn-color: #{$purple};
+        --btn-chip-bg: #{$purple};
+        --btn-chip-color: #{$yellow};
+        --btn-hover-bg: #{$white};
+    }
+
+    &--magenta {
+        --btn-bg: #{$magenta-dark};
+        --btn-hover-bg: #{$purple};
+    }
+
+    &--ghost {
+        --btn-bg: transparent;
+        --btn-color: #{$white};
+        --btn-border: #{rgba($white, 0.55)};
+        --btn-hover-bg: #{rgba($white, 0.16)};
+        --btn-chip-bg: #{$white};
+        --btn-chip-color: #{$purple};
+    }
+
+    &--light {
+        --btn-bg: #{$white};
+        --btn-color: #{$purple};
+        --btn-chip-bg: #{$purple};
+        --btn-chip-color: #{$white};
+        --btn-hover-bg: #{$yellow};
+    }
+
+    &--block {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+// Round icon button (sliders, play, share)
+.btn-round {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    font-size: 1.125rem;
+    color: $purple;
+    background: $white;
+    border: 1px solid $line;
+    border-radius: 50%;
+    transition:
+        background $transition,
+        color $transition,
+        transform $transition,
+        box-shadow $transition;
+
+    @include icon-selectors {
+        width: 1em;
+        height: 1em;
+    }
+
+    &:hover,
+    &:focus-visible {
+        color: $white;
+        background: $magenta-dark;
+        transform: translateY(-3px);
+        box-shadow: $shadow-md;
+    }
+}
+
+// Text link with arrow
+.link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: space(2);
+    font-family: $font-heading;
+    font-weight: $fw-semibold;
+    color: $purple;
+
+    @include icon-selectors {
+        transition: transform $transition;
+    }
+
+    &:hover,
+    &:focus-visible {
+        color: $magenta-dark;
+
+        i,
+        svg {
+            transform: translateX(4px);
+        }
+    }
+}

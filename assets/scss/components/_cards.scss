@@ -1,0 +1,304 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Small tag / chip -------------------------------------------------------
+.tag {
+    display: inline-block;
+    padding: space(1) space(3);
+    font-family: $font-heading;
+    font-weight: $fw-semibold;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $purple;
+    background: $surface;
+    border-radius: $radius-pill;
+
+    &--light {
+        background: $white;
+    }
+}
+
+// Shared card shell ------------------------------------------------------
+.card-vibe {
+    position: relative;
+    height: 100%;
+    background: $white;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    overflow: hidden;
+    transition:
+        transform $transition,
+        box-shadow $transition;
+
+    &:hover,
+    &:focus-within {
+        transform: translateY(-8px);
+        box-shadow: $shadow-md;
+    }
+}
+
+// Pillar card (three promises under the hero) ----------------------------
+.pillar {
+    padding: space(6);
+    padding-right: space(6);
+
+    &__title {
+        margin-bottom: space(5);
+        padding-right: $notch-size;
+    }
+
+    &__line {
+        height: 1px;
+        margin-bottom: space(5);
+        background: $line;
+    }
+
+    &__body {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: space(4);
+
+        p {
+            margin: 0;
+            color: $muted;
+        }
+    }
+
+    &__icon {
+        flex: none;
+        display: grid;
+        place-items: center;
+        width: 64px;
+        height: 64px;
+        font-size: 1.75rem;
+        color: $white;
+        background: $gradient-vibe;
+        border-radius: $radius-md;
+        transition: transform $transition;
+
+        @include icon-selectors {
+            width: 1em;
+            height: 1em;
+        }
+    }
+
+    &:hover &__icon {
+        transform: rotate(-8deg) scale(1.08);
+    }
+
+    &:hover .cut__badge {
+        color: $purple;
+        background: $yellow;
+    }
+}
+
+// Media card (services + blog) -------------------------------------------
+.media-card {
+    display: flex;
+    flex-direction: column;
+
+    &__media {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            @include cover-image;
+            transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+        }
+    }
+
+    &:hover &__media img {
+        transform: scale(1.08);
+    }
+
+    &__body {
+        flex: 1;
+        padding: space(5) space(5) space(6);
+        padding-right: space(9);
+
+        h3 {
+            margin: space(3) 0 space(2);
+        }
+
+        p {
+            margin: 0;
+            color: $muted;
+            font-size: 0.9375rem;
+        }
+    }
+
+    &__date {
+        position: absolute;
+        left: space(5);
+        bottom: 0;
+        z-index: 2;
+        padding: space(2) space(5);
+        font-family: $font-heading;
+        font-weight: $fw-semibold;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $purple;
+        background: $white;
+        border-radius: $radius-md $radius-md 0 0;
+    }
+
+    &__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: space(2);
+        align-items: center;
+        margin-top: space(4);
+        font-family: $font-heading;
+        font-size: 0.75rem;
+        font-weight: $fw-semibold;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $muted;
+
+        .tag {
+            border: 1px solid $line;
+            background: transparent;
+        }
+    }
+
+    a.stretched-link {
+        color: inherit;
+
+        &:hover,
+        &:focus-visible {
+            color: $magenta-dark;
+        }
+    }
+
+    &:hover .cut__badge {
+        color: $purple;
+        background: $yellow;
+    }
+}
+
+// Pricing / package card -------------------------------------------------
+.plan {
+    display: flex;
+    flex-direction: column;
+    padding: space(7) space(6);
+    border-radius: $radius-lg;
+
+    &__name {
+        margin-bottom: space(2);
+        font-size: 1.5rem;
+    }
+
+    &__for {
+        margin-bottom: space(5);
+        font-size: 0.9375rem;
+        color: $muted;
+    }
+
+    &__price {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: space(5);
+        padding-bottom: space(5);
+        border-bottom: 1px solid $line;
+        font-family: $font-heading;
+        font-weight: $fw-bold;
+        font-size: 2.25rem;
+        line-height: 1.1;
+        color: $purple;
+
+        small {
+            margin-top: space(1);
+            font-size: 0.875rem;
+            font-weight: $fw-regular;
+            font-family: $font-body;
+            color: $muted;
+        }
+    }
+
+    &__list {
+        flex: 1;
+        margin: 0 0 space(6);
+        padding: 0;
+        list-style: none;
+
+        li {
+            display: flex;
+            gap: space(3);
+            padding-block: space(2);
+        }
+
+        @include icon-selectors {
+            flex: none;
+            margin-top: 0.35em;
+            color: $blue;
+        }
+    }
+
+    &--featured {
+        color: rgba($white, 0.9);
+        background: $gradient-vibe;
+        border-color: transparent;
+
+        .plan__name,
+        .plan__price {
+            color: $white;
+        }
+
+        .plan__for,
+        .plan__price small {
+            color: rgba($white, 0.85);
+        }
+
+        .plan__price {
+            border-color: rgba($white, 0.3);
+        }
+
+        .plan__list i,
+        .plan__list svg {
+            color: $yellow;
+        }
+    }
+
+    &--dark {
+        color: rgba($white, 0.85);
+        background: $purple;
+        border-color: transparent;
+
+        .plan__name,
+        .plan__price {
+            color: $white;
+        }
+
+        .plan__for,
+        .plan__price small {
+            color: rgba($white, 0.75);
+        }
+
+        .plan__price {
+            border-color: rgba($white, 0.2);
+        }
+
+        .plan__list i,
+        .plan__list svg {
+            color: $sky;
+        }
+    }
+
+    &__flag {
+        position: absolute;
+        top: space(5);
+        right: space(5);
+        padding: space(1) space(3);
+        font-family: $font-heading;
+        font-weight: $fw-bold;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $purple;
+        background: $yellow;
+        border-radius: $radius-pill;
+    }
+}

@@ -1,0 +1,24 @@
+// ==========================================================================
+// Addvibez – main stylesheet
+// Load order: abstracts → base → components → layout
+// Bootstrap 5.3.8, Font Awesome 7.3.1 and Animate.css are loaded from CDN.
+// ==========================================================================
+
+// Base
+@use 'base/base';
+
+// Components
+@use 'components/buttons';
+@use 'components/eyebrow';
+@use 'components/cut';
+@use 'components/cards';
+@use 'components/media-cards';
+@use 'components/forms';
+@use 'components/marquee';
+@use 'components/scroll-top';
+@use 'components/blobs';
+
+// Layout
+@use 'layout/header';
+@use 'layout/hero';
+@use 'layout/sections';

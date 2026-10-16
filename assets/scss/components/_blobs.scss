@@ -1,0 +1,66 @@
+@use '../abstracts/mixins' as *;
+
+// Per-section placement of decorative blobs (parallax targets)
+.hero {
+    .blob--magenta {
+        width: 420px;
+        height: 420px;
+        top: 12%;
+        right: -120px;
+    }
+
+    .blob--blue {
+        width: 360px;
+        height: 360px;
+        bottom: -120px;
+        left: -100px;
+    }
+}
+
+.services {
+    .blob--sky {
+        width: 380px;
+        height: 380px;
+        top: -120px;
+        left: -120px;
+    }
+
+    .blob--magenta {
+        width: 320px;
+        height: 320px;
+        right: -100px;
+        bottom: -100px;
+    }
+}
+
+.why {
+    .blob--magenta {
+        width: 460px;
+        height: 460px;
+        top: -160px;
+        right: -140px;
+    }
+
+    .blob--blue {
+        width: 400px;
+        height: 400px;
+        bottom: -160px;
+        left: -140px;
+    }
+}
+
+.contact__panel {
+    .blob--magenta {
+        width: 420px;
+        height: 420px;
+        top: -140px;
+        left: -120px;
+    }
+
+    .blob--blue {
+        width: 480px;
+        height: 480px;
+        right: -120px;
+        bottom: -200px;
+    }
+}

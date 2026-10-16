@@ -1,0 +1,88 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.form-vibe {
+    .form-floating > .form-control,
+    .form-floating > .form-select {
+        min-height: 60px;
+        font-size: 0.9375rem;
+        color: $purple;
+        background-color: $white;
+        border: 1px solid rgba($purple, 0.22);
+        border-radius: $radius-sm;
+        transition:
+            border-color $transition,
+            box-shadow $transition;
+
+        &:hover {
+            border-color: $blue;
+        }
+
+        &:focus {
+            border-color: $blue;
+            box-shadow: 0 0 0 4px rgba($blue, 0.22);
+        }
+    }
+
+    .form-floating > textarea.form-control {
+        min-height: 150px;
+    }
+
+    .form-floating > label {
+        color: $muted;
+        font-size: 0.9375rem;
+    }
+
+    .form-control.is-invalid,
+    .form-select.is-invalid,
+    &.was-validated .form-control:invalid,
+    &.was-validated .form-select:invalid {
+        border-color: #c4162a;
+    }
+
+    .invalid-feedback {
+        color: #b3122a;
+    }
+}
+
+// Inline newsletter field ----------------------------------------------------
+.newsletter {
+    position: relative;
+
+    .form-control {
+        min-height: 56px;
+        padding-right: 72px;
+        color: $purple;
+        background: $white;
+        border: 0;
+        border-radius: $radius-sm;
+
+        &:focus {
+            box-shadow: 0 0 0 4px rgba($sky, 0.5);
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        display: grid;
+        place-items: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        color: $white;
+        background: $magenta-dark;
+        border: 0;
+        border-radius: 50%;
+        transition:
+            background $transition,
+            transform $transition;
+
+        &:hover,
+        &:focus-visible {
+            background: $purple;
+            transform: scale(1.1) rotate(-12deg);
+        }
+    }
+}

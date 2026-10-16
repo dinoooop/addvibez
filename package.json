@@ -1,0 +1,15 @@
+{
+  "name": "addvibez-html-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Addvibez home page HTML template (Bootstrap 5.3.8, jQuery 4.0.0, SCSS)",
+  "scripts": {
+    "sass": "sass assets/scss/main.scss assets/css/main.css --style=expanded --source-map",
+    "sass:min": "sass assets/scss/main.scss assets/css/main.min.css --style=compressed --no-source-map",
+    "sass:watch": "sass assets/scss/main.scss assets/css/main.css --watch --source-map",
+    "build": "npm run sass && npm run sass:min"
+  },
+  "devDependencies": {
+    "sass": "^1.90.0"
+  }
+}

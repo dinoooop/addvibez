@@ -1,0 +1,79 @@
+// ==========================================================================
+// Addvibez – design tokens
+// ==========================================================================
+
+// Brand palette ------------------------------------------------------------
+$purple: #200050;
+$purple-dark: #14003a;
+$purple-light: #3a1280;
+$sky: #50c0f0;
+$blue: #408ff0;
+$magenta: #d030b0;
+$magenta-dark: #b01f94;
+$yellow: #f0e040;
+
+// Neutrals -----------------------------------------------------------------
+$white: #ffffff;
+$black: #000000;
+$surface: #f6f4ff;
+$text: #3d3556;
+$muted: #5f5878;
+$line: rgba($purple, 0.12);
+
+// Gradients ----------------------------------------------------------------
+$gradient-vibe: linear-gradient(135deg, $blue 0%, $magenta 100%);
+$gradient-hot: linear-gradient(135deg, $magenta 0%, $yellow 100%);
+$gradient-cool: linear-gradient(135deg, $sky 0%, $blue 100%);
+$gradient-text-light: linear-gradient(90deg, $blue 0%, $magenta 100%);
+$gradient-text-dark: linear-gradient(90deg, $sky 0%, $magenta 60%, $yellow 100%);
+
+// Typography ---------------------------------------------------------------
+$font-heading: 'Plus Jakarta Sans', sans-serif;
+$font-body: 'Lato', sans-serif;
+$fw-regular: 400;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// Spacing scale (px) -------------------------------------------------------
+$space: (
+    1: 4px,
+    2: 8px,
+    3: 12px,
+    4: 16px,
+    5: 24px,
+    6: 32px,
+    7: 48px,
+    8: 64px,
+    9: 80px,
+    10: 96px,
+    11: 128px,
+);
+
+// Radii --------------------------------------------------------------------
+$radius-sm: 12px;
+$radius-md: 20px;
+$radius-lg: 28px;
+$radius-xl: 40px;
+$radius-pill: 999px;
+
+// Effects ------------------------------------------------------------------
+$shadow-sm: 0 4px 16px rgba($purple, 0.08);
+$shadow-md: 0 16px 40px rgba($purple, 0.14);
+$shadow-lg: 0 28px 64px rgba($purple, 0.22);
+$transition: 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+// Breakpoints (mobile first) -----------------------------------------------
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+);
+
+// Notch (inverted corner) size ---------------------------------------------
+$notch-radius: 24px;
+$notch-size: 72px;
+$notch-badge: 56px;
+
+// Header height ------------------------------------------------------------
+$header-height: 84px;

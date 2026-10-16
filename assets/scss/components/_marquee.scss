@@ -1,0 +1,104 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Infinite horizontal ticker. Track holds two identical groups.
+.marquee {
+    --marquee-speed: 40s;
+    overflow: hidden;
+    user-select: none;
+
+    &__track {
+        display: flex;
+        width: max-content;
+        animation: marquee var(--marquee-speed) linear infinite;
+    }
+
+    &__group {
+        display: flex;
+        flex: none;
+        align-items: center;
+        gap: space(6);
+        padding-right: space(6);
+        margin: 0;
+        list-style: none;
+    }
+
+    &--reverse &__track {
+        animation-direction: reverse;
+    }
+
+    &:hover &__track {
+        animation-play-state: paused;
+    }
+
+    // Slim keyword tape
+    &--tape {
+        --marquee-speed: 32s;
+        padding-block: space(4);
+        color: $white;
+        background: $gradient-vibe;
+        transform: rotate(-1.2deg);
+        margin-inline: -2%;
+
+        .marquee__group {
+            font-family: $font-heading;
+            font-weight: $fw-bold;
+            font-size: clamp(1.125rem, 2.4vw, 1.5rem);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+
+        @include icon-selectors {
+            color: $yellow;
+        }
+    }
+
+    // Giant outline words
+    &--giant {
+        --marquee-speed: 60s;
+
+        .marquee__group {
+            gap: space(7);
+            padding-right: space(7);
+            font-family: $font-heading;
+            font-weight: $fw-bold;
+            font-size: clamp(3.5rem, 10vw, 9rem);
+            line-height: 1.05;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            white-space: nowrap;
+        }
+
+        .marquee__word {
+            @include text-gradient($gradient-text-light);
+        }
+
+        .marquee__star {
+            font-size: 0.5em;
+            color: $magenta;
+        }
+    }
+
+    &--giant-dark {
+        .marquee__word {
+            @include text-gradient(linear-gradient(90deg, $white, rgba($white, 0.55)));
+        }
+
+        .marquee__star {
+            color: $yellow;
+        }
+    }
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@include reduced-motion {
+    .marquee__track {
+        animation: none;
+    }
+}

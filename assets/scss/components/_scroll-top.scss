@@ -1,0 +1,52 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.scroll-top {
+    position: fixed;
+    right: space(4);
+    bottom: space(4);
+    z-index: 1040;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    font-size: 1.125rem;
+    color: $purple;
+    background: $yellow;
+    border: 0;
+    border-radius: $radius-md;
+    box-shadow: $shadow-md;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(16px);
+    transition:
+        opacity $transition,
+        transform $transition,
+        visibility $transition,
+        background $transition,
+        color $transition;
+
+    @include icon-selectors {
+        width: 1em;
+        height: 1em;
+    }
+
+    &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &:hover,
+    &:focus-visible {
+        color: $white;
+        background: $magenta-dark;
+        transform: translateY(-4px);
+    }
+
+    @include up(md) {
+        right: space(6);
+        bottom: space(6);
+    }
+}

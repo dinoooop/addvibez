@@ -1,0 +1,158 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Sticky header – hides on scroll down, returns on scroll up (see main.js)
+.site-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    padding-block: space(3);
+    transition:
+        transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1),
+        background $transition,
+        box-shadow $transition,
+        padding $transition;
+
+    &.is-scrolled {
+        padding-block: space(2);
+        background: rgba($purple, 0.94);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 8px 32px rgba($purple-dark, 0.35);
+    }
+
+    &.is-hidden {
+        transform: translateY(-110%);
+    }
+
+    .navbar {
+        padding: 0;
+    }
+}
+
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: space(3);
+    margin-right: space(5);
+    padding: 0;
+
+    &__mark {
+        width: auto;
+        height: 44px;
+    }
+
+    &__word {
+        width: auto;
+        height: 17px;
+    }
+
+    &:hover,
+    &:focus-visible {
+        opacity: 0.88;
+    }
+}
+
+// Mobile toggler
+.site-toggler {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    font-size: 1.25rem;
+    color: $white;
+    background: rgba($white, 0.12);
+    border: 1px solid rgba($white, 0.3);
+    border-radius: $radius-sm;
+    transition: background $transition;
+
+    &:hover,
+    &:focus-visible {
+        background: rgba($white, 0.24);
+        color: $white;
+    }
+}
+
+// Off-canvas (mobile) / inline (lg+) menu
+.site-menu {
+    &.offcanvas-lg {
+        background: $purple;
+        color: $white;
+        width: min(86vw, 360px);
+    }
+
+    .offcanvas-header {
+        padding: space(4) space(5);
+        border-bottom: 1px solid rgba($white, 0.14);
+    }
+
+    .offcanvas-body {
+        padding: space(5);
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: space(1);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__link {
+        display: block;
+        padding: space(3) space(4);
+        font-family: $font-heading;
+        font-weight: $fw-semibold;
+        font-size: 1rem;
+        color: $white;
+        border-radius: $radius-sm;
+        transition:
+            background $transition,
+            color $transition;
+
+        &:hover,
+        &:focus-visible {
+            color: $white;
+            background: rgba($white, 0.14);
+        }
+
+        &.is-active {
+            color: $purple;
+            background: $white;
+        }
+    }
+
+    @include up(lg) {
+        flex: 1;
+
+        &.offcanvas-lg {
+            background: transparent;
+            width: auto;
+        }
+
+        .offcanvas-body {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: space(5);
+            padding: 0;
+        }
+
+        &__list {
+            flex-direction: row;
+            padding: space(1);
+            background: rgba($white, 0.1);
+            border: 1px solid rgba($white, 0.16);
+            border-radius: $radius-md;
+            backdrop-filter: blur(10px);
+        }
+
+        &__link {
+            padding: space(2) space(4);
+            font-size: 0.9375rem;
+        }
+    }
+}

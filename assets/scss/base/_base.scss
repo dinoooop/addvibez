@@ -1,0 +1,212 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+:root {
+    --av-purple: #{$purple};
+    --av-sky: #{$sky};
+    --av-blue: #{$blue};
+    --av-magenta: #{$magenta};
+    --av-yellow: #{$yellow};
+    --av-surface: #{$surface};
+    --cut-bg: #{$surface};
+    --bs-body-font-family: #{$font-body};
+    --bs-body-color: #{$text};
+    --bs-body-bg: #{$surface};
+    --bs-link-color-rgb: 64, 143, 240;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: $header-height;
+
+    @include reduced-motion {
+        scroll-behavior: auto;
+    }
+}
+
+body {
+    font-family: $font-body;
+    font-weight: $fw-regular;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: $text;
+    background-color: $surface;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    line-height: 1.15;
+    color: $purple;
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(2.375rem, 6.2vw, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(1.875rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: $fw-semibold;
+}
+
+p {
+    margin-bottom: space(4);
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+    transition: color $transition;
+
+    &:hover,
+    &:focus-visible {
+        color: $magenta-dark;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+:focus-visible {
+    outline: 3px solid $yellow;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+::selection {
+    background: $magenta;
+    color: $white;
+}
+
+// Skip link --------------------------------------------------------------
+.skip-link {
+    position: fixed;
+    top: space(2);
+    left: space(2);
+    z-index: 2000;
+    padding: space(3) space(5);
+    background: $yellow;
+    color: $purple;
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    border-radius: $radius-sm;
+    transform: translateY(-200%);
+    transition: transform $transition;
+
+    &:focus {
+        transform: translateY(0);
+        color: $purple;
+    }
+}
+
+// Sections ---------------------------------------------------------------
+.section {
+    position: relative;
+    padding-block: space(9);
+    --cut-bg: #{$surface};
+
+    @include up(lg) {
+        padding-block: space(11);
+    }
+
+    &--white {
+        background: $white;
+        --cut-bg: #{$white};
+    }
+
+    &--dark {
+        background: $purple;
+        color: rgba($white, 0.82);
+        --cut-bg: #{$purple};
+
+        h2,
+        h3,
+        h4 {
+            color: $white;
+        }
+    }
+
+    &__head {
+        max-width: 720px;
+        margin-inline: auto;
+        margin-bottom: space(8);
+        text-align: center;
+    }
+
+    &__lead {
+        font-size: 1.125rem;
+        color: $muted;
+    }
+}
+
+// Gradient accent word used inside headings
+.text-gradient {
+    @include text-gradient($gradient-text-light);
+    display: inline-block;
+
+    .section--dark &,
+    .on-dark & {
+        @include text-gradient($gradient-text-dark);
+    }
+}
+
+// Decorative blobs (parallax targets)
+.blob {
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: 0.55;
+    pointer-events: none;
+
+    &--magenta {
+        background: $magenta;
+    }
+
+    &--blue {
+        background: $blue;
+    }
+
+    &--sky {
+        background: $sky;
+    }
+
+    &--yellow {
+        background: $yellow;
+        opacity: 0.35;
+    }
+}
+
+// Icons – reusable for both <i> and <svg> -------------------------------
+.icon {
+    @include icon-selectors {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        line-height: 1;
+        font-size: inherit;
+        vertical-align: -0.125em;
+    }
+}
+
+.visually-hidden-focusable:not(:focus):not(:focus-within) {
+    @include sr-only;
+}
