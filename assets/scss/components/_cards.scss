@@ -90,6 +90,21 @@
         color: $purple;
         background: $yellow;
     }
+
+    // Three-up at 992-1199px: tighten so the copy doesn't squeeze into 4 lines
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+        padding: space(5);
+
+        &__body {
+            gap: space(3);
+        }
+
+        &__icon {
+            width: 52px;
+            height: 52px;
+            font-size: 1.5rem;
+        }
+    }
 }
 
 // Media card (services + blog) -------------------------------------------
@@ -210,6 +225,11 @@
         font-size: 2.25rem;
         line-height: 1.1;
         color: $purple;
+
+        // Three-up at 992-1199px: keep "Custom Quote" on one line
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            font-size: 1.75rem;
+        }
 
         small {
             margin-top: space(1);

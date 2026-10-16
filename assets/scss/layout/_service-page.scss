@@ -291,6 +291,7 @@
     }
 
     .accordion-button {
+        gap: space(3);
         padding: space(4) space(5);
         font-family: $font-heading;
         font-weight: $fw-semibold;
@@ -320,11 +321,19 @@
     gap: space(5);
 }
 
+// Sidebar is ~300px wide at 992-1199px: tighten padding so labels and the
+// WhatsApp button don't wrap
+$sidebar-tight: '(min-width: 992px) and (max-width: 1199.98px)';
+
 .side-card {
     padding: space(6);
     background: $white;
     border-radius: $radius-lg;
     box-shadow: $shadow-sm;
+
+    @media #{$sidebar-tight} {
+        padding: space(5);
+    }
 
     &__title {
         margin-bottom: space(5);
@@ -389,6 +398,10 @@
     border-radius: $radius-lg;
     overflow: hidden;
     isolation: isolate;
+
+    @media #{$sidebar-tight} {
+        padding: space(5);
+    }
 
     .blob {
         z-index: -1;

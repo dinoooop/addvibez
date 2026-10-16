@@ -258,8 +258,8 @@ a.cut__badge {
 
     &:hover,
     &:focus-visible {
-        color: $white;
-        background: $magenta-dark;
-        transform: rotate(45deg);
+        color: $purple;
+        background: $yellow;
+        transform: rotate(-45deg);
     }
 }

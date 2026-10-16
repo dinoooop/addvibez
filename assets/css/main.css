@@ -491,9 +491,9 @@ a.cut__badge {
   background: #f6f4ff;
 }
 a.cut__badge:hover, a.cut__badge:focus-visible {
-  color: #ffffff;
-  background: #b01f94;
-  transform: rotate(45deg);
+  color: #200050;
+  background: #f0e040;
+  transform: rotate(-45deg);
 }
 
 .tag {
@@ -570,6 +570,19 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
 .pillar:hover .cut__badge {
   color: #200050;
   background: #f0e040;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .pillar {
+    padding: 24px;
+  }
+  .pillar__body {
+    gap: 12px;
+  }
+  .pillar__icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+  }
 }
 
 .media-card {
@@ -672,6 +685,11 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
   font-size: 2.25rem;
   line-height: 1.1;
   color: #200050;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .plan__price {
+    font-size: 1.75rem;
+  }
 }
 .plan__price small {
   margin-top: 4px;
@@ -2602,6 +2620,7 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
   box-shadow: 0 16px 40px rgba(32, 0, 80, 0.14);
 }
 .accordion-vibe .accordion-button {
+  gap: 12px;
   padding: 16px 24px;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 600;
@@ -2631,6 +2650,11 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
   background: #ffffff;
   border-radius: 28px;
   box-shadow: 0 4px 16px rgba(32, 0, 80, 0.08);
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .side-card {
+    padding: 24px;
+  }
 }
 .side-card__title {
   margin-bottom: 24px;
@@ -2687,6 +2711,11 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
   border-radius: 28px;
   overflow: hidden;
   isolation: isolate;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .side-cta {
+    padding: 24px;
+  }
 }
 .side-cta .blob {
   z-index: -1;
