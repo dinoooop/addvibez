@@ -101,6 +101,7 @@
     aspect-ratio: 4 / 5;
     overflow: hidden;
     border-radius: $radius-lg;
+    background: $white;
     isolation: isolate;
     transition:
         transform $transition,
@@ -111,6 +112,8 @@
         inset: 0;
         z-index: -2;
         @include cover-image;
+        // see .media-card__media: trim the photo's anti-aliased edge row
+        clip-path: inset(1px);
         transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
     }
 
@@ -183,7 +186,6 @@
     &:hover,
     &:focus-within {
         transform: translateY(-8px);
-        box-shadow: $shadow-lg;
 
         img {
             transform: scale(1.06);

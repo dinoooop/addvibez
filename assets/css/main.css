@@ -379,12 +379,12 @@ img {
 
 .has-cut {
   position: relative;
-  -webkit-mask-image: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 100% 0, #000 23.5px, transparent 24px), radial-gradient(circle at -3px 12px, transparent 11.5px, #000 12px), radial-gradient(circle at 0 12px, transparent 11.5px, #000 12px);
-  mask-image: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 100% 0, #000 23.5px, transparent 24px), radial-gradient(circle at -3px 12px, transparent 11.5px, #000 12px), radial-gradient(circle at 0 12px, transparent 11.5px, #000 12px);
-  -webkit-mask-size: 56px 56px, calc(100% + 80px) calc(100% + 80px), 72px 48px, 48px 24px, 24px 24px, 9px 12px, 12px 9px;
-  mask-size: 56px 56px, calc(100% + 80px) calc(100% + 80px), 72px 48px, 48px 24px, 24px 24px, 9px 12px, 12px 9px;
-  -webkit-mask-position: right 0 top 0, -40px -40px, right 0 top 0, right 0 top 48px, right 48px top 48px, right 72px top 0, right 0 top 72px;
-  mask-position: right 0 top 0, -40px -40px, right 0 top 0, right 0 top 48px, right 48px top 48px, right 72px top 0, right 0 top 72px;
+  -webkit-mask-image: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 100% 0, #000 23.5px, transparent 24px), radial-gradient(circle at -3px 14px, transparent 11.5px, #000 12px), radial-gradient(circle at 0 13px, transparent 11.5px, #000 12px);
+  mask-image: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 100% 0, #000 23.5px, transparent 24px), radial-gradient(circle at -3px 14px, transparent 11.5px, #000 12px), radial-gradient(circle at 0 13px, transparent 11.5px, #000 12px);
+  -webkit-mask-size: 56px 56px, calc(100% + 80px) calc(100% + 80px), 74px 51px, 51px 24px, 24px 24px, 10px 14px, 14px 10px;
+  mask-size: 56px 56px, calc(100% + 80px) calc(100% + 80px), 74px 51px, 51px 24px, 24px 24px, 10px 14px, 14px 10px;
+  -webkit-mask-position: right 0 top 0, -40px -40px, right -2px top -2px, right -2px top 48px, right 48px top 48px, right 71px top -2px, right -2px top 71px;
+  mask-position: right 0 top 0, -40px -40px, right -2px top -2px, right -2px top 48px, right 48px top 48px, right 71px top -2px, right -2px top 71px;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-composite: source-over, source-out, source-over, source-over, source-over, source-over, source-over;
@@ -394,10 +394,10 @@ img {
 .has-cut--br {
   -webkit-mask-image: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 100% 100%, #000 23.5px, transparent 24px), radial-gradient(circle at -3px 0, transparent 11.5px, #000 12px), radial-gradient(circle at 0 -3px, transparent 11.5px, #000 12px);
   mask-image: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 100% 100%, #000 23.5px, transparent 24px), radial-gradient(circle at -3px 0, transparent 11.5px, #000 12px), radial-gradient(circle at 0 -3px, transparent 11.5px, #000 12px);
-  -webkit-mask-size: 56px 56px, calc(100% + 80px) calc(100% + 80px), 72px 48px, 48px 24px, 24px 24px, 9px 12px, 12px 9px;
-  mask-size: 56px 56px, calc(100% + 80px) calc(100% + 80px), 72px 48px, 48px 24px, 24px 24px, 9px 12px, 12px 9px;
-  -webkit-mask-position: right 0 bottom 0, -40px -40px, right 0 bottom 0, right 0 bottom 48px, right 48px bottom 48px, right 72px bottom 0, right 0 bottom 72px;
-  mask-position: right 0 bottom 0, -40px -40px, right 0 bottom 0, right 0 bottom 48px, right 48px bottom 48px, right 72px bottom 0, right 0 bottom 72px;
+  -webkit-mask-size: 56px 56px, calc(100% + 80px) calc(100% + 80px), 74px 51px, 51px 24px, 24px 24px, 10px 14px, 14px 10px;
+  mask-size: 56px 56px, calc(100% + 80px) calc(100% + 80px), 74px 51px, 51px 24px, 24px 24px, 10px 14px, 14px 10px;
+  -webkit-mask-position: right 0 bottom 0, -40px -40px, right -2px bottom -2px, right -2px bottom 48px, right 48px bottom 48px, right 71px bottom -2px, right -2px bottom 71px;
+  mask-position: right 0 bottom 0, -40px -40px, right -2px bottom -2px, right -2px bottom 48px, right 48px bottom 48px, right 71px bottom -2px, right -2px bottom 71px;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-composite: source-over, source-out, source-over, source-over, source-over, source-over, source-over;
@@ -405,17 +405,28 @@ img {
   mask-clip: no-clip;
 }
 .has-cut--tl-br {
-  -webkit-mask-image: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 0 0, #000 23.5px, transparent 24px), radial-gradient(circle at 12px 12px, transparent 11.5px, #000 12px), radial-gradient(circle at 12px 12px, transparent 11.5px, #000 12px), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 100% 100%, #000 23.5px, transparent 24px), radial-gradient(circle at -3px 0, transparent 11.5px, #000 12px), radial-gradient(circle at 0 -3px, transparent 11.5px, #000 12px);
-  mask-image: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 0 0, #000 23.5px, transparent 24px), radial-gradient(circle at 12px 12px, transparent 11.5px, #000 12px), radial-gradient(circle at 12px 12px, transparent 11.5px, #000 12px), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 100% 100%, #000 23.5px, transparent 24px), radial-gradient(circle at -3px 0, transparent 11.5px, #000 12px), radial-gradient(circle at 0 -3px, transparent 11.5px, #000 12px);
-  -webkit-mask-size: 56px 56px, 56px 56px, calc(100% + 80px) calc(100% + 80px), 72px 48px, 48px 24px, 24px 24px, 9px 12px, 12px 9px, 72px 48px, 48px 24px, 24px 24px, 9px 12px, 12px 9px;
-  mask-size: 56px 56px, 56px 56px, calc(100% + 80px) calc(100% + 80px), 72px 48px, 48px 24px, 24px 24px, 9px 12px, 12px 9px, 72px 48px, 48px 24px, 24px 24px, 9px 12px, 12px 9px;
-  -webkit-mask-position: left 0 top 0, right 0 bottom 0, -40px -40px, left 0 top 0, left 0 top 48px, left 48px top 48px, left 72px top 0, left 0 top 72px, right 0 bottom 0, right 0 bottom 48px, right 48px bottom 48px, right 72px bottom 0, right 0 bottom 72px;
-  mask-position: left 0 top 0, right 0 bottom 0, -40px -40px, left 0 top 0, left 0 top 48px, left 48px top 48px, left 72px top 0, left 0 top 72px, right 0 bottom 0, right 0 bottom 48px, right 48px bottom 48px, right 72px bottom 0, right 0 bottom 72px;
+  -webkit-mask-image: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 0 0, #000 23.5px, transparent 24px), radial-gradient(circle at 13px 14px, transparent 11.5px, #000 12px), radial-gradient(circle at 14px 13px, transparent 11.5px, #000 12px), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 100% 100%, #000 23.5px, transparent 24px), radial-gradient(circle at -3px 0, transparent 11.5px, #000 12px), radial-gradient(circle at 0 -3px, transparent 11.5px, #000 12px);
+  mask-image: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 0 0, #000 23.5px, transparent 24px), radial-gradient(circle at 13px 14px, transparent 11.5px, #000 12px), radial-gradient(circle at 14px 13px, transparent 11.5px, #000 12px), linear-gradient(#000, #000), linear-gradient(#000, #000), radial-gradient(circle at 100% 100%, #000 23.5px, transparent 24px), radial-gradient(circle at -3px 0, transparent 11.5px, #000 12px), radial-gradient(circle at 0 -3px, transparent 11.5px, #000 12px);
+  -webkit-mask-size: 56px 56px, 56px 56px, calc(100% + 80px) calc(100% + 80px), 74px 51px, 51px 24px, 24px 24px, 10px 14px, 14px 10px, 74px 51px, 51px 24px, 24px 24px, 10px 14px, 14px 10px;
+  mask-size: 56px 56px, 56px 56px, calc(100% + 80px) calc(100% + 80px), 74px 51px, 51px 24px, 24px 24px, 10px 14px, 14px 10px, 74px 51px, 51px 24px, 24px 24px, 10px 14px, 14px 10px;
+  -webkit-mask-position: left 0 top 0, right 0 bottom 0, -40px -40px, left -2px top -2px, left -2px top 48px, left 48px top 48px, left 71px top -2px, left -2px top 71px, right -2px bottom -2px, right -2px bottom 48px, right 48px bottom 48px, right 71px bottom -2px, right -2px bottom 71px;
+  mask-position: left 0 top 0, right 0 bottom 0, -40px -40px, left -2px top -2px, left -2px top 48px, left 48px top 48px, left 71px top -2px, left -2px top 71px, right -2px bottom -2px, right -2px bottom 48px, right 48px bottom 48px, right 71px bottom -2px, right -2px bottom 71px;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   -webkit-mask-composite: source-over, source-over, source-out, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over, source-over;
   mask-composite: add, add, subtract, add, add, add, add, add, add, add, add, add, add;
   mask-clip: no-clip;
+}
+
+.row > [class*=col]:has(> .has-cut),
+.container:has(> .has-cut) {
+  filter: drop-shadow(0 4px 10px rgba(32, 0, 80, 0.08));
+  transition: filter 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.row > [class*=col]:has(> .has-cut):has(> .has-cut:hover), .row > [class*=col]:has(> .has-cut):has(> .has-cut:focus-within),
+.container:has(> .has-cut):has(> .has-cut:hover),
+.container:has(> .has-cut):has(> .has-cut:focus-within) {
+  filter: drop-shadow(0 18px 22px rgba(32, 0, 80, 0.16));
 }
 
 .cut {
@@ -506,13 +517,11 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
   height: 100%;
   background: #ffffff;
   border-radius: 28px;
-  box-shadow: 0 4px 16px rgba(32, 0, 80, 0.08);
   overflow: hidden;
-  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .card-vibe:hover, .card-vibe:focus-within {
   transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(32, 0, 80, 0.14);
 }
 
 .pillar {
@@ -570,6 +579,7 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
 .media-card__media {
   position: relative;
   overflow: hidden;
+  clip-path: inset(1px);
 }
 .media-card__media img {
   width: 100%;
@@ -826,6 +836,7 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
   aspect-ratio: 4/5;
   overflow: hidden;
   border-radius: 28px;
+  background: #ffffff;
   isolation: isolate;
   transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -836,6 +847,7 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
   width: 100%;
   height: 100% !important;
   object-fit: cover;
+  clip-path: inset(1px);
   transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .team-card::before {
@@ -895,7 +907,6 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
 }
 .team-card:hover, .team-card:focus-within {
   transform: translateY(-8px);
-  box-shadow: 0 28px 64px rgba(32, 0, 80, 0.22);
 }
 .team-card:hover img, .team-card:focus-within img {
   transform: scale(1.06);
@@ -1960,7 +1971,6 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
   position: relative;
   overflow: hidden;
   border-radius: 40px;
-  box-shadow: 0 16px 40px rgba(32, 0, 80, 0.14);
   background: #ffffff;
 }
 .testimonials__media {
@@ -2344,6 +2354,439 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
   margin: 0;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
+}
+
+.page-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 460px;
+  padding-block: calc(84px + 64px) 80px;
+  color: #ffffff;
+  background: #200050;
+  overflow: hidden;
+  isolation: isolate;
+}
+@media (min-width: 992px) {
+  .page-hero {
+    min-height: 520px;
+  }
+}
+.page-hero__media {
+  position: absolute;
+  inset: -10% 0;
+  z-index: -3;
+}
+.page-hero__media img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+}
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(180deg, rgba(32, 0, 80, 0.6) 0%, rgba(32, 0, 80, 0.1) 35%, rgba(32, 0, 80, 0.75) 100%), linear-gradient(90deg, rgba(32, 0, 80, 0.94) 0%, rgba(32, 0, 80, 0.78) 55%, rgba(208, 48, 176, 0.3) 100%);
+}
+.page-hero .blob {
+  z-index: -1;
+}
+.page-hero .blob--magenta {
+  width: 380px;
+  height: 380px;
+  top: 8%;
+  right: -100px;
+}
+.page-hero .blob--blue {
+  width: 320px;
+  height: 320px;
+  bottom: -120px;
+  left: -80px;
+}
+.page-hero__title {
+  margin-bottom: 16px;
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
+  color: #ffffff;
+}
+.page-hero__lead {
+  max-width: 600px;
+  margin-bottom: 32px;
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+@media (min-width: 992px) {
+  .page-hero__lead {
+    font-size: 1.25rem;
+  }
+}
+
+.breadcrumb-vibe {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin: 0 0 24px;
+  padding: 8px 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.03em;
+  list-style: none;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+}
+.breadcrumb-vibe li {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+}
+.breadcrumb-vibe li + li::before {
+  content: "/";
+  color: rgba(255, 255, 255, 0.55);
+}
+.breadcrumb-vibe a {
+  color: rgba(255, 255, 255, 0.85);
+}
+.breadcrumb-vibe a:hover, .breadcrumb-vibe a:focus-visible {
+  color: #f0e040;
+}
+
+.service-detail .service-block {
+  margin-top: 80px;
+}
+.service-detail .service-block h2 {
+  margin-bottom: 16px;
+}
+.service-detail .service-block p {
+  color: #5f5878;
+}
+
+.service-figure-wrap {
+  filter: drop-shadow(0 8px 18px rgba(32, 0, 80, 0.12));
+}
+
+.service-figure {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 1200/760;
+  overflow: hidden;
+  border-radius: 40px;
+  background: #ffffff;
+}
+.service-figure img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  clip-path: inset(1px);
+}
+
+.service-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 28px;
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.service-photo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(32, 0, 80, 0.14);
+}
+
+.feature-item {
+  height: 100%;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 4px 16px rgba(32, 0, 80, 0.08);
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.feature-item h3 {
+  margin: 16px 0 8px;
+  font-size: 1.125rem;
+}
+.feature-item p {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+.feature-item__icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  font-size: 1.375rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #408ff0 0%, #d030b0 100%);
+  border-radius: 20px;
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.feature-item__icon i,
+.feature-item__icon svg {
+  width: 1em;
+  height: 1em;
+}
+.feature-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(32, 0, 80, 0.14);
+}
+.feature-item:hover .feature-item__icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.step-list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.step-list li {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding-bottom: 32px;
+}
+.step-list li:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  top: 52px;
+  bottom: 8px;
+  left: 25px;
+  border-left: 2px dashed rgba(208, 48, 176, 0.4);
+}
+.step-list li:last-child {
+  padding-bottom: 0;
+}
+.step-list li h3 {
+  margin: 8px 0 4px;
+  font-size: 1.125rem;
+}
+.step-list li p {
+  margin: 0;
+}
+.step-list__num {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #408ff0 0%, #d030b0 100%);
+  border: 4px solid #f6f4ff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(64, 143, 240, 0.25);
+}
+
+.accordion-vibe {
+  --bs-accordion-border-width: 0;
+  --bs-accordion-bg: #ffffff;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(64, 143, 240, 0.3);
+  --bs-accordion-active-bg: #ffffff;
+  --bs-accordion-active-color: #200050;
+}
+.accordion-vibe .accordion-item {
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 16px rgba(32, 0, 80, 0.08);
+  transition: box-shadow 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.accordion-vibe .accordion-item:hover {
+  box-shadow: 0 16px 40px rgba(32, 0, 80, 0.14);
+}
+.accordion-vibe .accordion-button {
+  padding: 16px 24px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #200050;
+  background: #ffffff;
+  box-shadow: none;
+}
+.accordion-vibe .accordion-button:not(.collapsed) {
+  color: #b01f94;
+}
+.accordion-vibe .accordion-button:focus-visible {
+  outline-offset: -3px;
+}
+.accordion-vibe .accordion-body {
+  padding: 0 24px 24px;
+  color: #5f5878;
+}
+
+.side-stack {
+  display: grid;
+  gap: 24px;
+}
+
+.side-card {
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 4px 16px rgba(32, 0, 80, 0.08);
+}
+.side-card__title {
+  margin-bottom: 24px;
+  font-size: 1.375rem;
+}
+
+.service-nav {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.service-nav__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: #200050;
+  background: #f6f4ff;
+  border-radius: 12px;
+  transition: background 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), color 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.service-nav__link i,
+.service-nav__link svg {
+  flex: none;
+  font-size: 0.875rem;
+  transition: transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.service-nav__link:hover, .service-nav__link:focus-visible {
+  color: #ffffff;
+  background: #b01f94;
+  transform: translateX(4px);
+}
+.service-nav__link:hover i,
+.service-nav__link:hover svg, .service-nav__link:focus-visible i,
+.service-nav__link:focus-visible svg {
+  transform: translateX(3px);
+}
+.service-nav__link.is-active {
+  color: #ffffff;
+  background: linear-gradient(135deg, #408ff0 0%, #d030b0 100%);
+}
+
+.side-cta {
+  position: relative;
+  padding: 32px;
+  color: rgba(255, 255, 255, 0.88);
+  background: #200050;
+  border-radius: 28px;
+  overflow: hidden;
+  isolation: isolate;
+}
+.side-cta .blob {
+  z-index: -1;
+  width: 240px;
+  height: 240px;
+  top: -90px;
+  right: -80px;
+}
+.side-cta__title {
+  margin-bottom: 8px;
+  font-size: 1.375rem;
+  color: #ffffff;
+}
+.side-cta p {
+  margin-bottom: 24px;
+  font-size: 0.9375rem;
+}
+.side-cta__phone {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.3;
+  color: #ffffff;
+}
+.side-cta__phone small {
+  display: block;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.side-cta__phone:hover, .side-cta__phone:focus-visible {
+  color: #f0e040;
+}
+.side-cta__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #408ff0 0%, #d030b0 100%);
+  border-radius: 50%;
+}
+
+.cta-section {
+  padding-block: 64px;
+}
+
+.cta-band {
+  position: relative;
+  padding: 48px 24px;
+  color: rgba(255, 255, 255, 0.86);
+  background: #200050;
+  border-radius: 40px;
+  overflow: hidden;
+  isolation: isolate;
+}
+@media (min-width: 992px) {
+  .cta-band {
+    padding: 80px 64px;
+  }
+}
+.cta-band h2 {
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+.cta-band .eyebrow {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+.cta-band .eyebrow::before {
+  background: #f0e040;
+}
+.cta-band .text-gradient {
+  background-image: linear-gradient(90deg, #50c0f0 0%, #d030b0 60%, #f0e040 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.cta-band .blob {
+  z-index: -1;
+}
+.cta-band .blob--magenta {
+  width: 360px;
+  height: 360px;
+  top: -140px;
+  left: -100px;
+}
+.cta-band .blob--blue {
+  width: 380px;
+  height: 380px;
+  right: -120px;
+  bottom: -180px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -29,6 +29,8 @@ $b: $notch-badge;
 $ext: 40px; // base-layer overflow so box-shadows survive the mask
 $fr: 12px; // concave fillet radius (smaller = shorter tapering tail)
 $trim: 3px; // see notch-layers()
+$ov: 1px; // overlap between neighbouring mask pieces (hides seams)
+$out: 2px; // how far the pieces reach past the card edges (hides edge slivers)
 $solid: linear-gradient(#000, #000);
 $disc: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent 100%);
 
@@ -52,33 +54,42 @@ $disc: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent
     // Each fillet is trimmed by $trim at the end where its arc meets the card
     // edge. There the wedge is thinner than a pixel and would render as a
     // hairline, so we stop it just short (the circle centre stays put).
+    //
+    // Hairline-proofing (visible as a thin dark line over photos at fractional
+    // zoom levels such as 80%, 90%, 110%):
+    //  - neighbouring pieces overlap by $ov, because two anti-aliased edges that
+    //    merely touch each cover ~50% of a pixel and leave a seam;
+    //  - pieces reach $out beyond the card edges, because the card's own edge
+    //    pixel is only partly covered and would otherwise survive as a sliver.
+    // (The card's shadow is a drop-shadow on its wrapper, so reaching past the
+    // edge costs nothing.)
     @if $corner == tr {
         @return (
-            layer($solid, $s ($s - $r), right 0 top 0),
-            layer($solid, ($s - $r) $r, right 0 top ($s - $r)),
+            layer($solid, ($s + $out) ($s - $r + $ov + $out), right (-$out) top (-$out)),
+            layer($solid, ($s - $r + $ov + $out) $r, right (-$out) top ($s - $r)),
             layer(round-disc('100% 0'), $r $r, right ($s - $r) top ($s - $r)),
-            layer(fillet('#{-$trim} #{$fr}'), ($fr - $trim) $fr, right $s top 0),
-            layer(fillet('0 #{$fr}'), $fr ($fr - $trim), right 0 top $s)
+            layer(fillet('#{-$trim} #{$fr + $out}'), ($fr - $trim + $ov) ($fr + $out), right ($s - $ov) top (-$out)),
+            layer(fillet('0 #{$fr + $ov}'), ($fr + $out) ($fr - $trim + $ov), right (-$out) top ($s - $ov))
         );
     }
 
     @if $corner == tl {
         @return (
-            layer($solid, $s ($s - $r), left 0 top 0),
-            layer($solid, ($s - $r) $r, left 0 top ($s - $r)),
+            layer($solid, ($s + $out) ($s - $r + $ov + $out), left (-$out) top (-$out)),
+            layer($solid, ($s - $r + $ov + $out) $r, left (-$out) top ($s - $r)),
             layer(round-disc('0 0'), $r $r, left ($s - $r) top ($s - $r)),
-            layer(fillet('#{$fr} #{$fr}'), ($fr - $trim) $fr, left $s top 0),
-            layer(fillet('#{$fr} #{$fr}'), $fr ($fr - $trim), left 0 top $s)
+            layer(fillet('#{$fr + $ov} #{$fr + $out}'), ($fr - $trim + $ov) ($fr + $out), left ($s - $ov) top (-$out)),
+            layer(fillet('#{$fr + $out} #{$fr + $ov}'), ($fr + $out) ($fr - $trim + $ov), left (-$out) top ($s - $ov))
         );
     }
 
     // br
     @return (
-        layer($solid, $s ($s - $r), right 0 bottom 0),
-        layer($solid, ($s - $r) $r, right 0 bottom ($s - $r)),
+        layer($solid, ($s + $out) ($s - $r + $ov + $out), right (-$out) bottom (-$out)),
+        layer($solid, ($s - $r + $ov + $out) $r, right (-$out) bottom ($s - $r)),
         layer(round-disc('100% 100%'), $r $r, right ($s - $r) bottom ($s - $r)),
-        layer(fillet('#{-$trim} 0'), ($fr - $trim) $fr, right $s bottom 0),
-        layer(fillet('0 #{-$trim}'), $fr ($fr - $trim), right 0 bottom $s)
+        layer(fillet('#{-$trim} 0'), ($fr - $trim + $ov) ($fr + $out), right ($s - $ov) bottom (-$out)),
+        layer(fillet('0 #{-$trim}'), ($fr + $out) ($fr - $trim + $ov), right (-$out) bottom ($s - $ov))
     );
 }
 
@@ -153,6 +164,20 @@ $disc: radial-gradient(circle closest-side, #000 calc(100% - 0.5px), transparent
 
     &--tl-br {
         @include notch-cut(tl br);
+    }
+}
+
+// Shadow for notched cards. A box-shadow is drawn outside the card's box, so it
+// can never reach into a notch (the notch then looks lighter than its
+// surroundings). A drop-shadow on the wrapper follows the real, notched shape.
+.row > [class*='col']:has(> .has-cut),
+.container:has(> .has-cut) {
+    filter: drop-shadow(0 4px 10px rgba($purple, 0.08));
+    transition: filter $transition;
+
+    &:has(> .has-cut:hover),
+    &:has(> .has-cut:focus-within) {
+        filter: drop-shadow(0 18px 22px rgba($purple, 0.16));
     }
 }
 
