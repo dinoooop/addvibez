@@ -44,6 +44,16 @@
     &__title {
         margin-bottom: space(5);
         padding-right: $notch-size;
+
+        // Reserve two lines on narrow desktops so a wrapping title
+        // doesn't push its divider/body out of line with the other cards.
+        @include up(lg) {
+            min-height: 2lh;
+        }
+
+        @include up(xl) {
+            min-height: 0;
+        }
     }
 
     &__line {

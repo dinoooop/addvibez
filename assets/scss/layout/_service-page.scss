@@ -99,7 +99,8 @@
         gap: space(3);
         color: $white;
 
-        & + li::before {
+        // Trailing separator so a wrapped line never starts with a stray "/"
+        &:not(:last-child)::after {
             content: '/';
             color: rgba($white, 0.55);
         }
@@ -181,6 +182,25 @@
     h3 {
         margin: space(4) 0 space(2);
         font-size: 1.125rem;
+
+        // Two cards sit side by side in narrow columns on small tablets and
+        // narrow desktops, so reserve two title lines there to keep the
+        // descriptions level across each row.
+        @include up(sm) {
+            min-height: 2lh;
+        }
+
+        @include up(md) {
+            min-height: 0;
+        }
+
+        @include up(lg) {
+            min-height: 2lh;
+        }
+
+        @include up(xl) {
+            min-height: 0;
+        }
     }
 
     p {

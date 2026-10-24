@@ -531,6 +531,16 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
   margin-bottom: 24px;
   padding-right: 72px;
 }
+@media (min-width: 992px) {
+  .pillar__title {
+    min-height: 2lh;
+  }
+}
+@media (min-width: 1200px) {
+  .pillar__title {
+    min-height: 0;
+  }
+}
 .pillar__line {
   height: 1px;
   margin-bottom: 24px;
@@ -2460,7 +2470,7 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
   gap: 12px;
   color: #ffffff;
 }
-.breadcrumb-vibe li + li::before {
+.breadcrumb-vibe li:not(:last-child)::after {
   content: "/";
   color: rgba(255, 255, 255, 0.55);
 }
@@ -2525,6 +2535,26 @@ a.cut__badge:hover, a.cut__badge:focus-visible {
 .feature-item h3 {
   margin: 16px 0 8px;
   font-size: 1.125rem;
+}
+@media (min-width: 576px) {
+  .feature-item h3 {
+    min-height: 2lh;
+  }
+}
+@media (min-width: 768px) {
+  .feature-item h3 {
+    min-height: 0;
+  }
+}
+@media (min-width: 992px) {
+  .feature-item h3 {
+    min-height: 2lh;
+  }
+}
+@media (min-width: 1200px) {
+  .feature-item h3 {
+    min-height: 0;
+  }
 }
 .feature-item p {
   margin: 0;
