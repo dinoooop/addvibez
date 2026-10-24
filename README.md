@@ -16,6 +16,21 @@ assets/
   video/  showreel.mp4
 ```
 
+## Pages
+| File | Purpose |
+|------|---------|
+| `index.html` | Home page (Services section shows 6 Digital Marketing services + "View More") |
+| `services.html` | All services in two sections: Digital Marketing (7) and Branding (8) |
+| `<service-name>.html` | One detail page per service (15), e.g. `search-engine-optimisation.html`, `logo-design.html` |
+
+Digital Marketing: Search Engine Optimisation, Generative Engine Optimization, Social Media Management,
+Performance Marketing, Content Marketing, Marketing Automation, Analytics.
+Branding: Brand Consulting, Logo Design, Industrial / Product Design, Graphic Design, 2D / 3D Visualisation,
+Content Creation & Marketing, Website Design & Development, E-Commerce.
+
+The 15 detail pages share one layout. To change something that appears on all of them (sidebar, footer,
+CTA), edit it in each file or regenerate the pages from a single template.
+
 ## Build CSS
 ```
 npm install

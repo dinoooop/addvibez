@@ -514,3 +514,25 @@ $sidebar-tight: '(min-width: 992px) and (max-width: 1199.98px)';
         }
     }
 }
+
+// Services listing + grouped sidebar ----------------------------------------------------
+.page-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: space(4);
+}
+
+// Sidebar list is split in two groups (Digital Marketing / Branding)
+.service-nav__group {
+    margin: space(5) 0 space(3);
+    font-family: $font-heading;
+    font-weight: $fw-bold;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $muted;
+
+    .side-card__title + & {
+        margin-top: 0;
+    }
+}
