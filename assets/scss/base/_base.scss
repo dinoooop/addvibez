@@ -8,7 +8,6 @@
     --av-magenta: #{$magenta};
     --av-yellow: #{$yellow};
     --av-surface: #{$surface};
-    --cut-bg: #{$surface};
     --bs-body-font-family: #{$font-body};
     --bs-body-color: #{$text};
     --bs-body-bg: #{$surface};
@@ -121,7 +120,6 @@ img {
 .section {
     position: relative;
     padding-block: space(9);
-    --cut-bg: #{$surface};
 
     @include up(lg) {
         padding-block: space(11);
@@ -129,19 +127,6 @@ img {
 
     &--white {
         background: $white;
-        --cut-bg: #{$white};
-    }
-
-    &--dark {
-        background: $purple;
-        color: rgba($white, 0.82);
-        --cut-bg: #{$purple};
-
-        h2,
-        h3,
-        h4 {
-            color: $white;
-        }
     }
 
     &__head {
@@ -166,47 +151,4 @@ img {
     .on-dark & {
         @include text-gradient($gradient-text-dark);
     }
-}
-
-// Decorative blobs (parallax targets)
-.blob {
-    position: absolute;
-    z-index: 0;
-    border-radius: 50%;
-    filter: blur(70px);
-    opacity: 0.55;
-    pointer-events: none;
-
-    &--magenta {
-        background: $magenta;
-    }
-
-    &--blue {
-        background: $blue;
-    }
-
-    &--sky {
-        background: $sky;
-    }
-
-    &--yellow {
-        background: $yellow;
-        opacity: 0.35;
-    }
-}
-
-// Icons – reusable for both <i> and <svg> -------------------------------
-.icon {
-    @include icon-selectors {
-        display: inline-block;
-        width: 1em;
-        height: 1em;
-        line-height: 1;
-        font-size: inherit;
-        vertical-align: -0.125em;
-    }
-}
-
-.visually-hidden-focusable:not(:focus):not(:focus-within) {
-    @include sr-only;
 }

@@ -14,9 +14,6 @@
     background: $surface;
     border-radius: $radius-pill;
 
-    &--light {
-        background: $white;
-    }
 }
 
 // Shared card shell ------------------------------------------------------
@@ -26,8 +23,6 @@
     background: $white;
     border-radius: $radius-lg;
     overflow: hidden;
-    // Shadow comes from the wrapper (see .has-cut shadow in _cut.scss) so it
-    // follows the notched shape.
     transition: transform $transition;
 
     &:hover,
@@ -43,7 +38,6 @@
 
     &__title {
         margin-bottom: space(5);
-        padding-right: $notch-size;
 
         // Reserve two lines on narrow desktops so a wrapping title
         // doesn't push its divider/body out of line with the other cards.
@@ -74,33 +68,6 @@
         }
     }
 
-    &__icon {
-        flex: none;
-        display: grid;
-        place-items: center;
-        width: 64px;
-        height: 64px;
-        font-size: 1.75rem;
-        color: $white;
-        background: $gradient-vibe;
-        border-radius: $radius-md;
-        transition: transform $transition;
-
-        @include icon-selectors {
-            width: 1em;
-            height: 1em;
-        }
-    }
-
-    &:hover &__icon {
-        transform: rotate(-8deg) scale(1.08);
-    }
-
-    &:hover .cut__badge {
-        color: $purple;
-        background: $yellow;
-    }
-
     // Three-up at 992-1199px: tighten so the copy doesn't squeeze into 4 lines
     @media (min-width: 992px) and (max-width: 1199.98px) {
         padding: space(5);
@@ -108,16 +75,10 @@
         &__body {
             gap: space(3);
         }
-
-        &__icon {
-            width: 52px;
-            height: 52px;
-            font-size: 1.5rem;
-        }
     }
 }
 
-// Media card (services + blog) -------------------------------------------
+// Media card (services) -------------------------------------------
 .media-card {
     display: flex;
     flex-direction: column;
@@ -125,10 +86,6 @@
     &__media {
         position: relative;
         overflow: hidden;
-        // A photo's outer anti-aliased pixel row survives a mask cut-out as a
-        // faint dark line along the card edge (visible at fractional zoom
-        // levels). Trimming 1px keeps the white card edge there instead.
-        clip-path: inset(1px);
 
         img {
             @include cover-image;
@@ -156,41 +113,6 @@
         }
     }
 
-    &__date {
-        position: absolute;
-        left: space(5);
-        bottom: 0;
-        z-index: 2;
-        padding: space(2) space(5);
-        font-family: $font-heading;
-        font-weight: $fw-semibold;
-        font-size: 0.75rem;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: $purple;
-        background: $white;
-        border-radius: $radius-md $radius-md 0 0;
-    }
-
-    &__meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: space(2);
-        align-items: center;
-        margin-top: space(4);
-        font-family: $font-heading;
-        font-size: 0.75rem;
-        font-weight: $fw-semibold;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: $muted;
-
-        .tag {
-            border: 1px solid $line;
-            background: transparent;
-        }
-    }
-
     a.stretched-link {
         color: inherit;
 
@@ -198,139 +120,5 @@
         &:focus-visible {
             color: $magenta-dark;
         }
-    }
-
-    &:hover .cut__badge {
-        color: $purple;
-        background: $yellow;
-    }
-}
-
-// Pricing / package card -------------------------------------------------
-.plan {
-    display: flex;
-    flex-direction: column;
-    padding: space(7) space(6);
-    border-radius: $radius-lg;
-
-    &__name {
-        margin-bottom: space(2);
-        font-size: 1.5rem;
-    }
-
-    &__for {
-        margin-bottom: space(5);
-        font-size: 0.9375rem;
-        color: $muted;
-    }
-
-    &__price {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: space(5);
-        padding-bottom: space(5);
-        border-bottom: 1px solid $line;
-        font-family: $font-heading;
-        font-weight: $fw-bold;
-        font-size: 2.25rem;
-        line-height: 1.1;
-        color: $purple;
-
-        // Three-up at 992-1199px: keep "Custom Quote" on one line
-        @media (min-width: 992px) and (max-width: 1199.98px) {
-            font-size: 1.75rem;
-        }
-
-        small {
-            margin-top: space(1);
-            font-size: 0.875rem;
-            font-weight: $fw-regular;
-            font-family: $font-body;
-            color: $muted;
-        }
-    }
-
-    &__list {
-        flex: 1;
-        margin: 0 0 space(6);
-        padding: 0;
-        list-style: none;
-
-        li {
-            display: flex;
-            gap: space(3);
-            padding-block: space(2);
-        }
-
-        @include icon-selectors {
-            flex: none;
-            margin-top: 0.35em;
-            color: $blue;
-        }
-    }
-
-    &--featured {
-        color: rgba($white, 0.9);
-        background: $gradient-vibe;
-        border-color: transparent;
-
-        .plan__name,
-        .plan__price {
-            color: $white;
-        }
-
-        .plan__for,
-        .plan__price small {
-            color: rgba($white, 0.85);
-        }
-
-        .plan__price {
-            border-color: rgba($white, 0.3);
-        }
-
-        .plan__list i,
-        .plan__list svg {
-            color: $yellow;
-        }
-    }
-
-    &--dark {
-        color: rgba($white, 0.85);
-        background: $purple;
-        border-color: transparent;
-
-        .plan__name,
-        .plan__price {
-            color: $white;
-        }
-
-        .plan__for,
-        .plan__price small {
-            color: rgba($white, 0.75);
-        }
-
-        .plan__price {
-            border-color: rgba($white, 0.2);
-        }
-
-        .plan__list i,
-        .plan__list svg {
-            color: $sky;
-        }
-    }
-
-    &__flag {
-        position: absolute;
-        top: space(5);
-        right: space(5);
-        padding: space(1) space(3);
-        font-family: $font-heading;
-        font-weight: $fw-bold;
-        font-size: 0.75rem;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: $purple;
-        background: $yellow;
-        border-radius: $radius-pill;
     }
 }

@@ -22,7 +22,6 @@ $line: rgba($purple, 0.12);
 
 // Gradients ----------------------------------------------------------------
 $gradient-vibe: linear-gradient(135deg, $blue 0%, $magenta 100%);
-$gradient-hot: linear-gradient(135deg, $magenta 0%, $yellow 100%);
 $gradient-cool: linear-gradient(135deg, $sky 0%, $blue 100%);
 $gradient-text-light: linear-gradient(90deg, $blue 0%, $magenta 100%);
 $gradient-text-dark: linear-gradient(90deg, $sky 0%, $magenta 60%, $yellow 100%);
@@ -69,11 +68,6 @@ $breakpoints: (
     lg: 992px,
     xl: 1200px,
 );
-
-// Notch (inverted corner) size ---------------------------------------------
-$notch-radius: 24px;
-$notch-size: 72px;
-$notch-badge: 56px;
 
 // Header height ------------------------------------------------------------
 $header-height: 84px;

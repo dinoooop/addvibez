@@ -40,24 +40,6 @@
             linear-gradient(90deg, rgba($purple, 0.94) 0%, rgba($purple, 0.78) 55%, rgba($magenta, 0.3) 100%);
     }
 
-    .blob {
-        z-index: -1;
-
-        &--magenta {
-            width: 380px;
-            height: 380px;
-            top: 8%;
-            right: -100px;
-        }
-
-        &--blue {
-            width: 320px;
-            height: 320px;
-            bottom: -120px;
-            left: -80px;
-        }
-    }
-
     &__title {
         margin-bottom: space(4);
         font-size: clamp(2.25rem, 5.5vw, 4rem);
@@ -131,7 +113,7 @@
     }
 }
 
-// Lead image with a notch
+// Lead image
 .service-figure-wrap {
     filter: drop-shadow(0 8px 18px rgba($purple, 0.12));
 }
@@ -146,25 +128,6 @@
 
     img {
         @include cover-image;
-        // trims the photo's anti-aliased edge row (see .media-card__media)
-        clip-path: inset(1px);
-    }
-}
-
-.service-photo {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: $radius-lg;
-    transition:
-        transform $transition,
-        box-shadow $transition;
-
-    &:hover {
-        transform: translateY(-6px);
-        box-shadow: $shadow-md;
     }
 }
 
@@ -232,60 +195,6 @@
         .feature-item__icon {
             transform: rotate(-8deg) scale(1.08);
         }
-    }
-}
-
-// Numbered steps ------------------------------------------------------------------
-.step-list {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    li {
-        position: relative;
-        display: flex;
-        gap: space(4);
-        padding-bottom: space(6);
-
-        // connector line
-        &:not(:last-child)::before {
-            content: '';
-            position: absolute;
-            top: 52px;
-            bottom: space(2);
-            left: 25px;
-            border-left: 2px dashed rgba($magenta, 0.4);
-        }
-
-        &:last-child {
-            padding-bottom: 0;
-        }
-
-        h3 {
-            margin: space(2) 0 space(1);
-            font-size: 1.125rem;
-        }
-
-        p {
-            margin: 0;
-        }
-    }
-
-    &__num {
-        flex: none;
-        display: grid;
-        place-items: center;
-        width: 52px;
-        height: 52px;
-        font-family: $font-heading;
-        font-weight: $fw-bold;
-        font-size: 1.125rem;
-        color: $white;
-        background: $gradient-vibe;
-        border: 4px solid $surface;
-        border-radius: 50%;
-        box-shadow: 0 0 0 2px rgba($blue, 0.25);
     }
 }
 
@@ -423,14 +332,6 @@ $sidebar-tight: '(min-width: 992px) and (max-width: 1199.98px)';
         padding: space(5);
     }
 
-    .blob {
-        z-index: -1;
-        width: 240px;
-        height: 240px;
-        top: -90px;
-        right: -80px;
-    }
-
     &__title {
         margin-bottom: space(2);
         font-size: 1.375rem;
@@ -476,62 +377,6 @@ $sidebar-tight: '(min-width: 992px) and (max-width: 1199.98px)';
         color: $white;
         background: $gradient-vibe;
         border-radius: 50%;
-    }
-}
-
-// CTA band -----------------------------------------------------------------------------
-.cta-section {
-    padding-block: space(8);
-}
-
-.cta-band {
-    position: relative;
-    padding: space(7) space(5);
-    color: rgba($white, 0.86);
-    background: $purple;
-    border-radius: $radius-xl;
-    overflow: hidden;
-    isolation: isolate;
-
-    @include up(lg) {
-        padding: space(9) space(8);
-    }
-
-    h2 {
-        margin-bottom: space(3);
-        color: $white;
-    }
-
-    .eyebrow {
-        color: $white;
-        background: rgba($white, 0.1);
-        border-color: rgba($white, 0.24);
-
-        &::before {
-            background: $yellow;
-        }
-    }
-
-    .text-gradient {
-        @include text-gradient($gradient-text-dark);
-    }
-
-    .blob {
-        z-index: -1;
-
-        &--magenta {
-            width: 360px;
-            height: 360px;
-            top: -140px;
-            left: -100px;
-        }
-
-        &--blue {
-            width: 380px;
-            height: 380px;
-            right: -120px;
-            bottom: -180px;
-        }
     }
 }
 

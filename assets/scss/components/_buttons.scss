@@ -90,72 +90,8 @@
         --btn-chip-color: #{$purple};
     }
 
-    &--light {
-        --btn-bg: #{$white};
-        --btn-color: #{$purple};
-        --btn-chip-bg: #{$purple};
-        --btn-chip-color: #{$white};
-        --btn-hover-bg: #{$yellow};
-    }
-
     &--block {
         width: 100%;
         justify-content: space-between;
-    }
-}
-
-// Round icon button (sliders, play, share)
-.btn-round {
-    display: inline-grid;
-    place-items: center;
-    width: 52px;
-    height: 52px;
-    padding: 0;
-    font-size: 1.125rem;
-    color: $purple;
-    background: $white;
-    border: 1px solid $line;
-    border-radius: 50%;
-    transition:
-        background $transition,
-        color $transition,
-        transform $transition,
-        box-shadow $transition;
-
-    @include icon-selectors {
-        width: 1em;
-        height: 1em;
-    }
-
-    &:hover,
-    &:focus-visible {
-        color: $white;
-        background: $magenta-dark;
-        transform: translateY(-3px);
-        box-shadow: $shadow-md;
-    }
-}
-
-// Text link with arrow
-.link-arrow {
-    display: inline-flex;
-    align-items: center;
-    gap: space(2);
-    font-family: $font-heading;
-    font-weight: $fw-semibold;
-    color: $purple;
-
-    @include icon-selectors {
-        transition: transform $transition;
-    }
-
-    &:hover,
-    &:focus-visible {
-        color: $magenta-dark;
-
-        i,
-        svg {
-            transform: translateX(4px);
-        }
     }
 }

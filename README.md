@@ -3,17 +3,18 @@
 Home page only. Open `index.html` in a browser (or serve the folder with any static server).
 
 ## Stack (all via CDN)
-Bootstrap 5.3.8 · jQuery 4.0.0 · Font Awesome Free 7.3.1 · Animate.css 4.1.1 · WOW.js 1.1.2 · Google Fonts (Plus Jakarta Sans 600/700, Lato 400)
+Bootstrap 5.3.8 · jQuery 4.0.0 · Font Awesome Free 7.3.1 · Google Fonts (Plus Jakarta Sans 600/700, Lato 400)
 
 ## Structure
 ```
 index.html
+services.html
+service-single.html
 assets/
-  scss/   abstracts → base → components → layout (main.scss is the entry point)
+  scss/   abstracts, base, components, layout (main.scss is the entry point)
   css/    main.css (+ map), main.min.css  (compiled output)
   js/     main.js (jQuery)
-  images/ optimised WebP/PNG, logo files
-  video/  showreel.mp4
+  images/ optimised WebP/PNG and logo files
 ```
 
 ## Pages
@@ -21,15 +22,15 @@ assets/
 |------|---------|
 | `index.html` | Home page (Services section shows 6 Digital Marketing services + "View More") |
 | `services.html` | All services in two sections: Digital Marketing (7) and Branding (8) |
-| `<service-name>.html` | One detail page per service (15), e.g. `search-engine-optimisation.html`, `logo-design.html` |
+| `service-single.html` | Service detail page template; every service card and link points here |
 
 Digital Marketing: Search Engine Optimisation, Generative Engine Optimization, Social Media Management,
 Performance Marketing, Content Marketing, Marketing Automation, Analytics.
 Branding: Brand Consulting, Logo Design, Industrial / Product Design, Graphic Design, 2D / 3D Visualisation,
 Content Creation & Marketing, Website Design & Development, E-Commerce.
 
-The 15 detail pages share one layout. To change something that appears on all of them (sidebar, footer,
-CTA), edit it in each file or regenerate the pages from a single template.
+`service-single.html` currently holds the Search Engine Optimisation content. Copy it to make a page per
+service when the content is ready, then point that service's links at the new file.
 
 ## Build CSS
 ```
@@ -40,5 +41,5 @@ npm run sass:watch   # while developing
 Use `assets/css/main.min.css` in production.
 
 ## Placeholder content to replace
-Stats figures, testimonials, team names, work/portfolio items, blog posts, packages ("Custom Quote"),
-social links (`#`) and the form handler (front-end validation only, no mailer).
+Service descriptions and FAQs, social links (`#`) and the form handler (front-end validation only, no mailer).
+`service-single.html` currently holds the Search Engine Optimisation content and every service links to it.
