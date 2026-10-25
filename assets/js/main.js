@@ -39,6 +39,7 @@ jQuery(function ($) {
     // ------------------------------------------------------------------
     const $navLinks = $('.site-menu__link');
     const sections = $navLinks
+        .filter('[href^="#"]')
         .map(function () {
             const $target = $($(this).attr('href'));
             return $target.length ? { link: $(this), target: $target } : null;
